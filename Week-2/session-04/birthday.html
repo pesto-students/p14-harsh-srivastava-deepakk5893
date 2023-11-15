@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Happpy Birthday Message Creator</title>
+    <style>
+      form {
+        max-width: 600px;
+      }
+      div {
+        margin-bottom: 10px;
+        display: flex;
+      }
+      label {
+        width: 190px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="color"],
+      input[type="number"],
+      input[type="range"] {
+        width: 100%;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Happpy Birthday Message Creator</h1>
+    <form action="/submit" method="POST">
+      <div>
+        <label for="messge">Messge?</label>
+        <input type="text" id="messge" name="messge" required>
+      </div>
+
+      <div>
+        <label for="email">Email Address?</label>
+        <input type="email" id="email" name="email" required
+          pattern="[a-zA-Z0-9-_.]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*">
+      </div>
+
+      <div>
+        <label for="date">Date to Send?</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div>
+        <label for="color">Message Color?</label>
+        <input type="color" id="color" name="color">
+      </div>
+
+      <div>
+        <label for="blinkCount">Number of Blinks?</label>
+        <input type="number" id="blinkCount" name="blinkCount" min="0" max="10" value="0">
+      </div>
+
+      <div>
+        <label for="musicVolume">Music Volume?</label>
+        <input type="range" id="musicVolume" name="musicVolume" min="0" max="50" value="20">
+      </div>
+
+      <div>
+        <button type="submit">Send Birthday Message</button>
+      </div>
+    </form>
+  </body>
+
+</html>
