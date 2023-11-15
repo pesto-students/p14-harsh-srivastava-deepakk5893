@@ -1,0 +1,47 @@
+.container{
+  width: 600px;
+  height: 280px;
+  border: 2px solid blue;
+  padding: 5px;
+  background-color: #F0F0F0;
+}
+
+h2{
+  font-family: Arial, sans-serif;
+  font-size: 16pt;
+  color: blue;
+  font-style: italic;
+}
+
+
+.verse1 {
+  background-color: yellow;
+  float: left;
+  margin-right: 10px;
+  width: 200px;
+  padding: 10px;
+}
+
+.verse2 {
+  /* No specific styling */
+}
+
+.verse3 {
+  background-color: orange;
+  position: absolute;
+  top: 200px;
+  left: 110px;
+  width: 200px;
+  padding: 10px;
+}
+
+.verse4 {
+  background-color: rgb(255, 80, 0);
+  color: white;
+  float: right;
+  width: 200px;
+  padding: 10px;
+  margin: 0;
+  margin-right: 40px;
+  padding-top: 0px;
+}

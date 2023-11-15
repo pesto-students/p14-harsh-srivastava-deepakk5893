@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Starting Lineup</title>
+    <style>
+      form {
+        max-width: 500px;
+      }
+      div {
+        display: flex;
+        margin-bottom: 10px;
+      }
+      fieldset {
+        width: 400px
+      }
+      fieldset.vertical label {
+        display: block;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h2>Starting Lineup</h2></header>
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+
+      <div class="horizontal">
+        <fieldset>
+          <legend>Status:</legend>
+          <p>
+            <label>
+              <input type="radio" name="status" value="Draft"> Draft
+            </label>
+            <label>
+                <input type="radio" name="status" value="Final" checked> Final
+            </label>
+          </p>
+        </fieldset>
+      </div>
+
+      <div>
+        <label for="gameDate">Date:</label>
+        <select id="gameDate" name="gameDate">
+            <option value="March 20"> March 20</option>
+            <option value="March 24"> March 24</option>
+            <option value="April 02"> April 02</option>
+            <option value="April 06"> April 06</option>
+            <option value="April 13"> April 13</option>
+        </select>
+      </div>
+
+      <div>
+        <fieldset class="vertical">
+          <legend>Players:</legend>
+          <p>
+            <label>
+              <input type="checkbox" name="player" value="Aarav Agarwal"> Aarav Agarwal
+            </label>
+            <label>
+              <input type="checkbox" name="player" value="Ava Johnson"> Ava Johnson
+            </label>
+            <label>
+              <input type="checkbox" name="player" value="Julio Ortiz"> Julio Ortiz
+            </label>
+            <label>
+              <input type="checkbox" name="player" value="Liam Rubio"> Liam Rubio
+            </label>
+            <label>
+              <input type="checkbox" name="player" value="Emma Witherspoon"> Emma Witherspoon
+            </label>
+          </p>
+        </fieldset>
+      </div>
+
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>

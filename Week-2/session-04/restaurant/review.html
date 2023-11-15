@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Happpy Birthday Message Creator</title>
+    <style>
+      form {
+        max-width: 600px;
+      }
+      div {
+        margin-bottom: 10px;
+        display: flex;
+      }
+      label {
+        width: 190px;
+      }
+      input[type="text"],
+      input[type="date"]{
+        width: 100%;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h2>Restaurant Reviews</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="add-review.html">Add Review</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <h1>Add Review</h1>
+    <form action="/submit" method="POST">
+      <div>
+        <label for="userName">Name?</label>
+        <input type="text" id="userName" name="userName" required>
+      </div>
+
+      <div>
+        <label for="restaurantName">Restaurant?</label>
+        <select id="restaurantName" name="restaurantName" required>
+          <option value="" disabled selected hidden>Choose One...</option>
+          <option value="Main Street Cafe"> Main Street Cafe</option>
+          <option value="Greek house"> Greek house</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="visitDate">Date of Visit?</label>
+        <input type="date" id="visitDate" name="visitDate" required>
+      </div>
+
+      <div>
+        <label for="rating">Rating?</label>
+        <select id="rating" name="rating" required>
+          <option value="" disabled selected hidden>Choose One...</option>
+          <option value="1"> 1</option>
+          <option value="2"> 2</option>
+          <option value="3"> 3</option>
+          <option value="4"> 4</option>
+          <option value="5"> 5</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="details">Details?</label>
+        <textarea id="details" name="details" rows="3" cols="50"></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+
+</html>
