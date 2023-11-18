@@ -8,8 +8,8 @@ function divideArray(nums) {
     odd_nums.push(num)
     }
   }
-  even_nums = even_nums.length == 0 ? 'None' : even_nums.sort()
-  odd_nums = odd_nums.length == 0 ? 'None' : odd_nums.sort()
+  even_nums = even_nums.length == 0 ? 'None' : even_nums.sort((a, b) => a - b)
+  odd_nums = odd_nums.length == 0 ? 'None' : odd_nums.sort((a, b) => a - b)
   console.log(even_nums)
   console.log(odd_nums)
 }
