@@ -1,11 +1,14 @@
-matchingNumber = 55
-guessLimit = 10
-guessSoFar = 0
+let matchingNumber = 55
+let guessLimit = 10
+let guessSoFar = 0
 
 function playGuessingGame(numToGuess,totalGuesses){
   let previouslyEntered = 'Enter a number between 1 and 100.'
   for(let i = 0; i < totalGuesses; i++){
     let num = prompt(previouslyEntered)
+    if (num === null) {
+      return null; // Cancel button clicked
+    }
 		while (isNaN(num)) {
       num = prompt("Please enter a number.")
     }

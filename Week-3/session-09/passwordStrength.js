@@ -1,17 +1,19 @@
-function isStrongPassword(password){
-	if( (password.length < 8) || password.includes('password') || !containsUppercase(password) ){
-		return false
+function isStrongPassword(password) {
+	if (password.length < 8) {
+		return false;
 	}
-	return true
-}
 
-function containsUppercase(str) {
-	for (let i = 0; i < str.length; i++) {
-		if (str[i] === str[i].toUpperCase()) {
-			return true
-		}
+	const containsPasswordString = /password/i;
+	if (containsPasswordString.test(password)) {
+		return false;
 	}
-	return false
+
+	const containsUppercase = /[A-Z]/;
+	if (!containsUppercase.test(password)) {
+		return false;
+	}
+
+	return true;
 }
 
 isStrongPassword('testsadasdApassword')
