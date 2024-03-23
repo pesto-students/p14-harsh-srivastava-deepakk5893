@@ -2,32 +2,44 @@ import BookDetail from './BookDetail';
 import React, { useState } from 'react';
 import WithLogging from './WithLogging';
 import BookForm from './BookForm';
+import BookDataLoader from './BookDataLoader'
+import useBookFilter from './useBookFilter';
+import { useTheme } from './ThemeContext';
+import useBookSorter from './useBookSorter'
 
 const BookList = () => {
-  const [books, setBooks] = useState([
-    { title: 'Book 1', author: 'Author 1', year: 2020 },
-    { title: 'Book 2', author: 'Author 2', year: 2018 },
-    { title: 'Book 3', author: 'Author 3', year: 2022 }
-  ]);
-
+  const { theme } = useTheme();
+  const [books, setBooks] = useState([]);
+  const { filteredBooks, handleSearchChange } = useBookFilter(books);
+  const [sortedBooks, sortBooks] = useBookSorter(filteredBooks);
   const handleAddBook = (newBook) => {
     setBooks([...books, newBook]);
   };
-
   const handleDeleteBook = (index) => {
     const updatedBooks = [...books];
     updatedBooks.splice(index, 1);
     setBooks(updatedBooks);
   };
 
+  const handleSortBooks = () => {
+    sortBooks();
+  };
+
   return (
-    <div>
+    <div style={{ backgroundColor: theme === 'light' ? '#ffffff' : '#333333', color: theme === 'light' ? '#333333' : '#ffffff' }}>
       <h1>Book List</h1>
-      {books.length === 0 ? (
+      <BookDataLoader setBooks={setBooks} />
+      <button onClick={handleSortBooks}>Sort Books</button>
+      <input
+        type="text"
+        placeholder="Search books"
+        onChange={handleSearchChange}
+      />
+      {sortedBooks.length === 0 ? (
         <p>No books available. Add some books using the form below:</p>
       ) : (
         <div>
-          {books.map((book, index) => (
+          {sortedBooks.map((book, index) => (
             <div key={index}>
               <BookDetail title={book.title} author={book.author} year={book.year} />
               <button onClick={() => handleDeleteBook(index)}>Delete</button>
