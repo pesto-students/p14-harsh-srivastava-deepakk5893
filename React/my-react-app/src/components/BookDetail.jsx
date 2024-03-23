@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Book = ({ title, author, year }) => {
+const BookDetail = ({ title, author, year }) => {
   return (
     <div>
       <h3>{title}</h3>
@@ -10,4 +10,4 @@ const Book = ({ title, author, year }) => {
   );
 };
 
-export default Book;
+export default BookDetail;
